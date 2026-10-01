@@ -1,0 +1,26 @@
+# Monorepo CI: pnpm (JS/TS) + uv (Python). Runs the same `pnpm check` and `pnpm build` used locally.
+name: ci
+on:
+  pull_request:
+  push:
+    branches: [main]
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6          # version from package.json "packageManager"
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+      - uses: astral-sh/setup-uv@v10.2.0
+        with:
+          enable-cache: true                 # Python version from .python-version
+      - run: pnpm install --frozen-lockfile
+      - run: uv sync --all-packages --locked
+      - run: pnpm check
+      - run: pnpm build

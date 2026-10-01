@@ -1,0 +1,400 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "respectGitignore": true,
+  "env": {
+    "CLAUDE_HOOK_FORMAT_MAP": "py=uv run ruff format --quiet;ts,tsx,js,jsx,mjs,cjs,json,jsonc,css=pnpm exec biome check --write --no-errors-on-unmatched",
+    "CLAUDE_HOOK_FORMAT_CMD": "",
+    "CLAUDE_HOOK_STOP_CHECK_CMD": "pnpm lint && pnpm typecheck",
+    "CLAUDE_HOOK_LOG": "1",
+    "CLAUDE_HOOK_PROTECTED_GLOBS": ".env:.env.*:*.lock:package-lock.json:pnpm-lock.yaml:yarn.lock:bun.lock:secrets/*:GEMINI.md:context-pack*.md:.github/copilot-instructions.md:.github/instructions/*:.cursor/rules/*:.claude/registry.json:uv.lock:.venv/*:*/node_modules/*:node_modules/*:*/.next/*:next-env.d.ts:*/next-env.d.ts",
+    "CLAUDE_DESIGN_GATE": "1"
+  },
+  "includeGitInstructions": true,
+  "permissions": {
+    "allow": [
+      "Bash(git status)",
+      "Bash(git status *)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(git show *)",
+      "Bash(git branch *)",
+      "Bash(git rev-parse *)",
+      "Bash(ls *)",
+      "Bash(pwd)",
+      "Bash(which *)",
+      "Bash(jq *)",
+      "WebFetch(domain:code.claude.com)",
+      "WebFetch(domain:docs.anthropic.com)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(python3 .claude/scripts/ctx.py *)",
+      "Bash(git push *)",
+      "Bash(git reset --hard *)",
+      "Bash(git clean *)",
+      "Bash(git rebase *)",
+      "Bash(npm publish *)",
+      "Bash(pnpm publish *)",
+      "Bash(docker system prune *)",
+      "Edit(./.claude/settings.json)",
+      "Edit(./.mcp.json)",
+      "Bash(pnpm install)",
+      "Bash(pnpm install --frozen-lockfile)",
+      "Bash(pnpm run *)",
+      "Bash(pnpm lint)",
+      "Bash(pnpm lint *)",
+      "Bash(pnpm lint:js)",
+      "Bash(pnpm lint:py)",
+      "Bash(pnpm typecheck)",
+      "Bash(pnpm test)",
+      "Bash(pnpm test *)",
+      "Bash(pnpm check)",
+      "Bash(pnpm build)",
+      "Bash(pnpm format)",
+      "Bash(pnpm dev)",
+      "Bash(pnpm dev:py)",
+      "Bash(pnpm --filter *)",
+      "Bash(pnpm exec biome *)",
+      "Bash(pnpm list *)",
+      "Bash(pnpm why *)",
+      "Bash(pnpm outdated *)",
+      "Bash(pnpm dlx shadcn@latest add *)",
+      "Bash(pnpm dlx shadcn@latest view *)",
+      "Bash(pnpm dlx shadcn@latest search *)",
+      "Bash(pnpm dlx shadcn@latest info *)",
+      "Bash(pnpm dlx shadcn@latest diff *)",
+      "Bash(uv sync)",
+      "Bash(uv sync *)",
+      "Bash(uv run ruff *)",
+      "Bash(uv run mypy)",
+      "Bash(uv run mypy *)",
+      "Bash(uv run pytest)",
+      "Bash(uv run pytest *)",
+      "Bash(uv lock --check)",
+      "Bash(uv tree *)",
+      "Bash(uv pip list *)",
+      "Bash(uv python list *)",
+      "WebFetch(domain:nextjs.org)",
+      "WebFetch(domain:docs.astral.sh)",
+      "WebFetch(domain:pnpm.io)",
+      "WebFetch(domain:biomejs.dev)",
+      "WebFetch(domain:ui.shadcn.com)",
+      "Bash(pnpm add *)",
+      "Bash(pnpm remove *)",
+      "Bash(pnpm update *)",
+      "Bash(pnpm dlx *)",
+      "Bash(npx *)",
+      "Bash(vercel *)",
+      "Bash(uv add *)",
+      "Bash(uv remove *)",
+      "Bash(uv lock --upgrade *)",
+      "Bash(uv pip install *)",
+      "Bash(pnpm design:check)",
+      "Bash(pnpm copy:check)",
+      "Bash(pnpm exec impeccable *)",
+      "Bash(npx impeccable *)",
+      "WebFetch(domain:impeccable.style)",
+      "Bash(pnpm design:sync)",
+      "Bash(pnpm design:tokens)"
+    ],
+    "deny": [
+      "Bash(rm -rf /)",
+      "Bash(rm -rf ~)",
+      "Bash(rm -rf ~/)",
+      "Bash(git push --force *)",
+      "Bash(git push -f *)",
+      "Bash(sudo *)",
+      "Read(./.env)",
+      "Read(./.env.local)",
+      "Read(./.env.*.local)",
+      "Read(./.env.production)",
+      "Read(./secrets/**)",
+      "Read(./**/*.pem)",
+      "Read(./**/*.key)",
+      "Read(~/.ssh/**)",
+      "Read(~/.aws/**)",
+      "Bash(npm install *)",
+      "Bash(yarn *)",
+      "Bash(pip install *)",
+      "Bash(pip3 install *)"
+    ],
+    "ask": [],
+    "defaultMode": "default",
+    "additionalDirectories": []
+  },
+  "enableAllProjectMcpServers": false,
+  "enabledMcpjsonServers": [
+    "next-devtools",
+    "shadcn"
+  ],
+  "disabledMcpjsonServers": [
+    "example-stdio",
+    "example-http-oauth",
+    "example-http-headers",
+    "example-http-dynamic-auth",
+    "example-sse",
+    "example-ws"
+  ],
+  "skillOverrides": {},
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/session-start.sh",
+            "timeout": 15,
+            "statusMessage": "Loading project context"
+          }
+        ]
+      },
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/design-gate.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/user-prompt-submit.sh",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/copy-gate.sh",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/design-gate.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/guard-bash.sh",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/protect-files.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/post-edit-format.sh",
+            "timeout": 60,
+            "statusMessage": "Formatting"
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/docs-lint.sh",
+            "timeout": 30,
+            "statusMessage": "Linting context"
+          }
+        ]
+      },
+      {
+        "matcher": "Skill",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/copy-gate.sh",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/design-gate.sh",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/design-tokens.sh",
+            "timeout": 20,
+            "statusMessage": "Checking design tokens"
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/voice-check.sh",
+            "timeout": 20,
+            "statusMessage": "Checking copy voice"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "permission_prompt|idle_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/notify.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/stop-check.sh",
+            "timeout": 300
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/copy-gate.sh",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/design-gate.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "matcher": "manual|auto",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/pre-compact.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/session-end.sh",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  },
+  "worktree": {
+    "symlinkDirectories": [],
+    "sparsePaths": [],
+    "baseRef": "fresh"
+  },
+  "disableSkillShellExecution": false,
+  "statusLine": {
+    "type": "command",
+    "command": "\"${CLAUDE_PROJECT_DIR:-.}\"/.claude/hooks/statusline.sh",
+    "padding": 0
+  },
+  "enabledPlugins": {
+    "impeccable@impeccable": true
+  },
+  "extraKnownMarketplaces": {
+    "impeccable": {
+      "source": {
+        "source": "github",
+        "repo": "pbakaus/impeccable"
+      }
+    }
+  },
+  "sandbox": {
+    "enabled": false,
+    "failIfUnavailable": false,
+    "autoAllowBashIfSandboxed": true,
+    "allowUnsandboxedCommands": true,
+    "network": {
+      "allowedDomains": [
+        "registry.npmjs.org",
+        "pypi.org",
+        "files.pythonhosted.org"
+      ],
+      "deniedDomains": [],
+      "allowUnixSockets": [],
+      "allowLocalBinding": true
+    },
+    "filesystem": {
+      "allowWrite": [],
+      "denyWrite": [],
+      "denyRead": [
+        "~/.ssh",
+        "~/.aws"
+      ],
+      "allowRead": []
+    },
+    "credentials": {
+      "files": [],
+      "envVars": []
+    },
+    "excludedCommands": [
+      "git",
+      "docker"
+    ]
+  },
+  "claudeMdExcludes": []
+}

@@ -1,0 +1,17 @@
+[project]
+name = "new-app-api"
+version = "0.1.0"
+description = "Private Python sidecar for Python-only libraries, called by the Next.js app"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi[standard]>=0.142.2",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.15,<0.13.0"]
+build-backend = "uv_build"
+
+# Vercel loads `app` from this module (src layout). See https://vercel.com/docs/functions/runtimes/python
+[tool.vercel]
+entrypoint = "new_app_api.main:app"
