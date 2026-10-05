@@ -10181,6 +10181,15 @@
    "add": "pnpm dlx shadcn@latest add @aceternity/registration-form-with-images"
   },
   {
+   "name": "ribbon-gradient-shader",
+   "registry": "@aceternity",
+   "item": "ribbon-gradient-shader",
+   "type": "block",
+   "category": "sections",
+   "description": "Hero with an animated WebGL ribbon gradient sweeping behind a grouped issue table",
+   "add": "pnpm dlx shadcn@latest add @aceternity/ribbon-gradient-shader"
+  },
+  {
    "name": "saas-landing-page",
    "registry": "@aceternity",
    "item": "saas-landing-page",
