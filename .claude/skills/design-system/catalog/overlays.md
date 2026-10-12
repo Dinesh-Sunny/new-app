@@ -28,5 +28,5 @@ Free items only. Before installing: `--dry-run`, never `--overwrite` (see ../lib
 | `dialog` | @motion-primitives | ui | A modal dialog component with smooth entrance and exit animations. |
 | `morphing-dialog` | @motion-primitives | ui | A dialog that morphs from its trigger element with smooth transitions. |
 | `morphing-popover` | @motion-primitives | ui | A popover component that morphs from its trigger with fluid animations. |
-| `SwipeToast-TS-TW` | @react-bits | component | Single toast that rises through its bottom edge, swipes down to dismiss on a flick or a distance, and burns a… |
-| `WarmTooltip-TS-TW` | @react-bits | component | Tooltip group with one shared delay: the first label waits and pops from its trigger, then siblings open inst… |
+| `SwipeToast-TS-TW` | @react-bits | component | Toast that swipes down to dismiss and burns a thin fuse for its remaining time. |
+| `WarmTooltip-TS-TW` | @react-bits | component | Tooltip group where the first label waits, then its siblings open instantly while warm. |

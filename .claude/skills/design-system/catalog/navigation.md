@@ -25,17 +25,17 @@ Free items only. Before installing: `--dry-run`, never `--overwrite` (see ../lib
 | `dock` | @motion-primitives | ui | A macOS-style dock component with scaling and movement effects. |
 | `toolbar-dynamic` | @motion-primitives | ui | A toolbar component with dynamic appearance based on user interaction. |
 | `toolbar-expandable` | @motion-primitives | ui | An expandable toolbar that reveals additional options with animations. |
-| `BranchedMenu-TS-TW` | @react-bits | component | Collapsible menu whose sections unfold into a trunk with a curved branch to each child, and an accent line th… |
+| `BranchedMenu-TS-TW` | @react-bits | component | Collapsible menu that branches each section from a trunk and traces a line to your pick. |
 | `BubbleMenu-TS-TW` | @react-bits | component | Floating circular expanding menu with staggered item reveal. |
-| `Dock-TS-TW` | @react-bits | component | macOS style magnifying dock with proximity scaling of icons. |
+| `Dock-TS-TW` | @react-bits | component | macOS style dock with smooth magnification, launch bounce, badges and context menus. |
 | `FlowingMenu-TS-TW` | @react-bits | component | Liquid flowing active indicator glides between menu items. |
-| `GooeyNav-TS-TW` | @react-bits | component | Navigation indicator morphs with gooey blob transitions between items. |
-| `LightPillar-TS-TW` | @react-bits | component | Vertical pillar of light with glow effects. |
+| `GooeyNav-TS-TW` | @react-bits | component | A navigation bar whose active pill breaks into goo that flows over to the item you pick. |
+| `LightPillar-TS-TW` | @react-bits | component | A swirling pillar of light that ignites on load, leans toward the cursor and surges on click. |
 | `LineSidebar-TS-TW` | @react-bits | component | Static list navigation with a cursor-proximity effect that shifts and highlights nearby items. |
 | `PillNav-TS-TW` | @react-bits | component | Minimal pill nav with sliding active highlight + smooth easing. |
-| `RefineFrame-TS-TW` | @react-bits | component | Reserved-aspect frame that walks any media through queued, generating, refining and complete without layout s… |
-| `RubberSegment-TS-TW` | @react-bits | component | Segmented control with a rubber thumb: taps stretch it across the gap and squash it onto the target, and you… |
-| `SlideCommit-TS-TW` | @react-bits | component | Slide-to-confirm handle that plants with a spinner while your action runs, unfurls into a done pill on succes… |
+| `PromptBar-TS-TW` | @react-bits | component | Chat composer with @ sources, / commands, a model picker, dictation and attachments. |
+| `RubberSegment-TS-TW` | @react-bits | component | Segmented control whose rubber thumb stretches across the gap and squashes into place. |
+| `SlideCommit-TS-TW` | @react-bits | component | Slide-to-confirm handle that spins while your action runs and unfurls into a done pill. |
 | `StaggeredMenu-TS-TW` | @react-bits | component | Menu with staggered item animations and smooth transitions on open/close. |
-| `Stepper-TS-TW` | @react-bits | component | Animated multi-step progress indicator with active state transitions. |
-| `VoicePill-TS-TW` | @react-bits | component | Mic button that swells into a tinted capsule of level-driven equalizer bars and an elapsed clock while held o… |
+| `Stepper-TS-TW` | @react-bits | component | A multi-step flow with a gliding step indicator, spring transitions and horizontal or vertical layouts. |
+| `VoicePill-TS-TW` | @react-bits | component | Mic button that swells into a capsule of live equalizer bars and a timer while recording. |

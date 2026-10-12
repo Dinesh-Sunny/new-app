@@ -44,12 +44,12 @@ Free items only. Before installing: `--dry-run`, never `--overwrite` (see ../lib
 | `scroll-progress` | @motion-primitives | ui | A component that visualizes scroll progress with animated indicators. |
 | `sliding-number` | @motion-primitives | ui | A component that transitions between numbers with a sliding animation. |
 | `AccordionGallery-TS-TW` | @react-bits | component | Panels expand on hover or focus, revealing parallax imagery and captions. |
-| `AnimatedList-TS-TW` | @react-bits | component | List items enter with staggered motion variants for polished reveals. |
-| `CallChip-TS-TW` | @react-bits | component | Inline tool-call chip whose fill wipes across while a live ms counter ticks, completing with a green wash on… |
-| `CodeSlots-TS-TW` | @react-bits | component | One-time-code input where a hidden overlay input owns focus, paste and SMS autofill while each slot lands its… |
+| `AnimatedList-TS-TW` | @react-bits | component | A scrolling list whose rows spring into view, with a gliding selection and arrow keys. |
+| `CodeSlots-TS-TW` | @react-bits | component | One-time code input whose digits spring into their slots, with paste and SMS autofill. |
 | `Counter-TS-TW` | @react-bits | component | Flexible animated counter supporting increments + easing. |
 | `FaultyTerminal-TS-TW` | @react-bits | component | Terminal CRT scanline squares effect with flicker + noise. |
 | `GradualBlur-TS-TW` | @react-bits | component | Progressively un-blurs content based on scroll or trigger creating a cinematic reveal. |
-| `Shredder-TS-TW` | @react-bits | component | A list with a paper shredder at the bottom. Drag a row into the slit and the rollers tug it in, pull it throu… |
-| `SloshGauge-TS-TW` | @react-bits | component | Tank gauge whose liquid chases the value with mass, tilts with its own speed and splashes against the top whe… |
-| `StatusMark-TS-TW` | @react-bits | component | A 20px status glyph for agent task lists that morphs in place from a dashed idle ring to a spinning or real-p… |
+| `Lanyard-TS-TW` | @react-bits | component | Swinging 3D badge on a stretchy woven band that you can drag, throw or click to flip. |
+| `Shredder-TS-TW` | @react-bits | component | A list with a paper shredder at the bottom that cuts dragged rows into curling strips. |
+| `SloshGauge-TS-TW` | @react-bits | component | Tank gauge whose liquid chases the value, tilts as it moves and splashes when it fills. |
+| `StatusMark-TS-TW` | @react-bits | component | Agent task status glyph that morphs from an idle ring to a progress arc, then a check. |
