@@ -10,6 +10,6 @@ Free items only. Before installing: `--dry-run`, never `--overwrite` (see ../lib
 | `loader` | @aceternity | ui |  |
 | `multi-step-loader` | @aceternity | ui |  |
 | `confetti` | @magicui | ui | Confetti animations are best used to delight your users when something special happens |
-| `LatticeLoader-TS-TW` | @react-bits | component | Inline agent-status row: a 3x3 or 4x4 lattice whose cells brighten in a phase-offset wave beside a verb and a… |
-| `LightTunnel-TS-TW` | @react-bits | component | A radial fibre-optic tunnel with light pulses racing into depth. |
-| `PulseHeart-TS-TW` | @react-bits | component | Like button that contracts to a dot, flips colour at its smallest frame and pulses back while the count swaps… |
+| `dot-display-dot-loader` | @paceui | ui | Frame-by-frame 9x9 LED dot matrix loader animation component. |
+| `LatticeLoader-TS-TW` | @react-bits | component | Agent status row with a lattice of cells that brighten in a wave beside a live stopwatch. |
+| `PulseHeart-TS-TW` | @react-bits | component | Like button that contracts to a dot, flips colour and pulses back as the count ticks over. |
